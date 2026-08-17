@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Global Resets & Base Styling
+   ========================================================================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Navigation Bar (Sticky + Animated Links)
+   ========================================================================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #12355b;
+    color: white;
+    padding: 15px 50px;
+    position: sticky;        /* Keeps nav fixed at top */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Adds subtle shadow */
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+/* Animated Underline Effect */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4dabf7;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Scrollspy Active State */
+nav ul li a.active {
+    color: #4dabf7;
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Hero Section & Profile Picture
+   ========================================================================== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
+}
+
+.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #12355b;
+}
+
+.hero h1 {
+    font-size: 45px;
+    color: #12355b;
+    margin: 10px 0;
+}
+
+.hero h3 {
+    font-weight: normal;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    color: #666;
+}
+
+button {
+    background: #12355b;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #003d80;
+}
+
+/* ==========================================================================
+   General Section Layout
+   ========================================================================== */
+section {
+    padding: 40px 80px;
+}
+
+section h2 {
+    color: #12355b;
+}
+
+#skills ul {
+    background: white;
+    padding: 25px 40px;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   Project & Research Cards
+   ========================================================================== */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cards > div {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 280px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   Interactive Project Filter Buttons
+   ========================================================================== */
+.filter-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #e9ecef;
+    color: #12355b;
+    border: 1px solid #12355b;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #12355b;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Buttons & External Links
+   ========================================================================== */
+.contact-links, 
+.project-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn, 
+.project-links a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #0056b3;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn:hover, 
+.project-links a:hover {
+    background-color: #003d80;
+}
+
+.contact-info {
+    background: white;
+    border-left: 4px solid #12355b;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.contact-info p {
+    margin: 8px 0;
+}
+
+.contact-info a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    text-align: center;
+    background: #12355b;
+    color: white;
+    padding: 20px;
+}
