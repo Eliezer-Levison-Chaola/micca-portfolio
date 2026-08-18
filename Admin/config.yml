@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "images"
-public_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "content"
@@ -13,10 +13,6 @@ collections:
         label: "Homepage Settings"
         name: "homepage"
         fields:
-          # Profile & Downloads
-          - { label: "Profile Image", name: "profile_image", widget: "image", required: false }
-          - { label: "CV File (PDF)", name: "cv_file", widget: "file", required: false }
-
           # Hero Section
           - { label: "Hero Name", name: "hero_name", widget: "string", default: "Micca Rambiki" }
           - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string", default: "Student | Educator | Researcher" }
@@ -24,15 +20,21 @@ collections:
 
           # About Section
           - { label: "About Title", name: "about_title", widget: "string", default: "About Me" }
-          - { label: "About Text", name: "about_text", widget: "text", default: "I am a student at Domasi College of Education, dedicated to academic excellence, effective teaching methodologies, and educational development. More updates on my specific research focus and specializations will be added soon." }
+          - { label: "About Text", name: "about_text", widget: "text", default: "I am a student at Domasi College of Education, dedicated to academic excellence, effective teaching methodologies, and educational development." }
 
-          # Academic & Professional Skills List
+          # Profile & File Uploads
+          - { label: "Profile Image", name: "profile_image", widget: "image", required: false }
+          - { label: "CV File (PDF)", name: "cv_file", widget: "file", required: false }
+
+          # Skills Section Heading & Items
+          - { label: "Skills Section Title", name: "skills_title", widget: "string", default: "Academic & Professional Skills" }
           - label: "Skills List"
             name: "skills"
             widget: "list"
             field: { label: "Skill Name", name: "skill_item", widget: "string", default: "Educational Methods & Pedagogy" }
 
-          # Projects Section
+          # Projects Section Heading & Cards
+          - { label: "Projects Section Title", name: "projects_title", widget: "string", default: "Projects & Academic Work" }
           - label: "Projects & Academic Work"
             name: "projects"
             widget: "list"
@@ -42,6 +44,7 @@ collections:
               - { label: "Project Description", name: "description", widget: "text", default: "Details about specific academic projects, teaching attachments, and research coursework will be updated here soon." }
 
           # Contact Information
+          - { label: "Contact Section Title", name: "contact_title", widget: "string", default: "Contact & Information" }
           - { label: "Institution Name", name: "institution", widget: "string", default: "Domasi College of Education" }
           - { label: "Email Address", name: "email", widget: "string", default: "zoeRambiki@gmail.com" }
           - { label: "Phone / WhatsApp Number", name: "phone", widget: "string", default: "+265 987 45 61 06" }
