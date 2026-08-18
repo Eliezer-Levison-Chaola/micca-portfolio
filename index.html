@@ -20,7 +20,7 @@
     <meta property="og:description" content="Official portfolio of Micca Rambiki, student at Domasi College of Education." />
     <meta property="og:type" content="website" />
 
-    <!-- Netlify Identity Widget (Required for CMS authentication redirects) -->
+    <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <!-- Structured Data (JSON-LD) for Search Engine Rich Results -->
@@ -59,25 +59,25 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Micca Rambiki</h1>
+        <h1 id="hero-name">Micca Rambiki</h1>
 
-        <h3>
+        <h3 id="hero-subtitle">
             Student | Educator | Researcher
         </h3>
 
-        <p>
+        <p id="hero-desc">
             Pursuing education excellence at Domasi College of Education.
         </p>
 
-        <!-- Visible CV Button (No download link) -->
+        <!-- Visible CV Button -->
         <button onclick="alert('CV will be available soon.')">Download CV</button>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <h2>About Me</h2>
+        <h2 id="about-title">About Me</h2>
 
-        <p>
+        <p id="about-text">
             I am a student at Domasi College of Education, dedicated to academic excellence, 
             effective teaching methodologies, and educational development. More updates on my 
             specific research focus and specializations will be added soon.
@@ -126,9 +126,9 @@
         </p>
 
         <div class="contact-info">
-            <p><strong>Institution:</strong> Domasi College of Education</p>
-            <p><strong>Email:</strong> <a href="mailto:zoeRambiki@gmail.com">zoeRambiki@gmail.com</a></p>
-            <p><strong>Phone / WhatsApp:</strong> <a href="tel:+265987456106">+265 987 45 61 06</a></p>
+            <p><strong>Institution:</strong> <span id="contact-inst">Domasi College of Education</span></p>
+            <p><strong>Email:</strong> <a id="contact-email" href="mailto:zoeRambiki@gmail.com">zoeRambiki@gmail.com</a></p>
+            <p><strong>Phone / WhatsApp:</strong> <a id="contact-phone" href="tel:+265987456106">+265 987 45 61 06</a></p>
         </div>
 
         <div class="contact-links">
@@ -137,7 +137,7 @@
         </div>
     </section>
 
-    <!-- Footer with Admin Link -->
+    <!-- Footer -->
     <footer>
         <p>
             © 2026 Micca Rambiki | Domasi College of Education
@@ -161,6 +161,31 @@
           }
         });
       }
+    </script>
+
+    <!-- Live Data Fetch Script from CMS JSON -->
+    <script>
+      fetch('/_data/content.json')
+        .then(response => response.json())
+        .then(data => {
+          if(data.hero_name) document.getElementById('hero-name').innerText = data.hero_name;
+          if(data.hero_subtitle) document.getElementById('hero-subtitle').innerText = data.hero_subtitle;
+          if(data.hero_description) document.getElementById('hero-desc').innerText = data.hero_description;
+          if(data.about_title) document.getElementById('about-title').innerText = data.about_title;
+          if(data.about_text) document.getElementById('about-text').innerText = data.about_text;
+          if(data.institution) document.getElementById('contact-inst').innerText = data.institution;
+          if(data.email) {
+            const emailEl = document.getElementById('contact-email');
+            emailEl.innerText = data.email;
+            emailEl.href = 'mailto:' + data.email;
+          }
+          if(data.phone) {
+            const phoneEl = document.getElementById('contact-phone');
+            phoneEl.innerText = data.phone;
+            phoneEl.href = 'tel:' + data.phone.replace(/\s+/g, '');
+          }
+        })
+        .catch(err => console.log('Using static default content.'));
     </script>
 
 </body>

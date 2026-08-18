@@ -6,21 +6,18 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "settings"
+    label: "Site Content"
     files:
-      - file: "index.html"
-        label: "Homepage Content"
-        name: "homepage"
+      - file: "_data/content.json"
+        label: "Homepage Fields"
+        name: "homepage_data"
         fields:
-          - { label: "Hero Name", name: "hero_name", widget: "string", default: "Micca Rambiki", required: false }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string", default: "Student | Educator | Researcher", required: false }
-          - { label: "Hero Description", name: "hero_description", widget: "string", default: "Pursuing education excellence at Domasi College of Education.", required: false }
-          - { label: "About Title", name: "about_title", widget: "string", default: "About Me", required: false }
-          - { label: "About Text", name: "about_text", widget: "text", default: "I am a student at Domasi College of Education, dedicated to academic excellence, effective teaching methodologies, and educational development.", required: false }
-          - { label: "Profile Image", name: "profile_image", widget: "image", required: false }
-          - { label: "CV File (PDF)", name: "cv_file", widget: "file", required: false }
-          - { label: "Skills Title", name: "skills_title", widget: "string", default: "Academic & Professional Skills", required: false }
-          - { label: "Institution", name: "institution", widget: "string", default: "Domasi College of Education", required: false }
-          - { label: "Email", name: "email", widget: "string", default: "zoeRambiki@gmail.com", required: false }
-          - { label: "Phone Number", name: "phone", widget: "string", default: "+265 987 45 61 06", required: false }
+          - { label: "Hero Name", name: "hero_name", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "About Title", name: "about_title", widget: "string" }
+          - { label: "About Text", name: "about_text", widget: "text" }
+          - { label: "Institution", name: "institution", widget: "string" }
+          - { label: "Email Address", name: "email", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
