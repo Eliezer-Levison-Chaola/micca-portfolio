@@ -3,18 +3,45 @@ backend:
   branch: main
 
 media_folder: "images"
-public_folder: "/images"
+public_folder: "images"
 
 collections:
   - name: "content"
     label: "Site Content"
     files:
       - file: "index.html"
-        label: "Homepage Content"
+        label: "Homepage Settings"
         name: "homepage"
         fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string", default: "Micca Rambiki" }
+          # Profile & Downloads
+          - { label: "Profile Image", name: "profile_image", widget: "image", required: false }
+          - { label: "CV File (PDF)", name: "cv_file", widget: "file", required: false }
+
+          # Hero Section
+          - { label: "Hero Name", name: "hero_name", widget: "string", default: "Micca Rambiki" }
           - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string", default: "Student | Educator | Researcher" }
-          - { label: "About Me Text", name: "about_text", widget: "text" }
-          - { label: "Email Address", name: "email", widget: "string" }
-          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "string", default: "Pursuing education excellence at Domasi College of Education." }
+
+          # About Section
+          - { label: "About Title", name: "about_title", widget: "string", default: "About Me" }
+          - { label: "About Text", name: "about_text", widget: "text", default: "I am a student at Domasi College of Education, dedicated to academic excellence, effective teaching methodologies, and educational development. More updates on my specific research focus and specializations will be added soon." }
+
+          # Academic & Professional Skills List
+          - label: "Skills List"
+            name: "skills"
+            widget: "list"
+            field: { label: "Skill Name", name: "skill_item", widget: "string", default: "Educational Methods & Pedagogy" }
+
+          # Projects Section
+          - label: "Projects & Academic Work"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Project Title", name: "title", widget: "string", default: "Academic Work & Research" }
+              - { label: "Project Category", name: "category", widget: "string", default: "education" }
+              - { label: "Project Description", name: "description", widget: "text", default: "Details about specific academic projects, teaching attachments, and research coursework will be updated here soon." }
+
+          # Contact Information
+          - { label: "Institution Name", name: "institution", widget: "string", default: "Domasi College of Education" }
+          - { label: "Email Address", name: "email", widget: "string", default: "zoeRambiki@gmail.com" }
+          - { label: "Phone / WhatsApp Number", name: "phone", widget: "string", default: "+265 987 45 61 06" }
