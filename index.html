@@ -20,6 +20,9 @@
     <meta property="og:description" content="Official portfolio of Micca Rambiki, student at Domasi College of Education." />
     <meta property="og:type" content="website" />
 
+    <!-- Netlify Identity Widget (Required for CMS authentication redirects) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Structured Data (JSON-LD) for Search Engine Rich Results -->
     <script type="application/ld+json">
     {
@@ -143,6 +146,19 @@
 
     <!-- JavaScript File -->
     <script src="script.js"></script>
+
+    <!-- Netlify Identity Redirect Handler -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 
 </body>
 </html>
