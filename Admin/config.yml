@@ -6,12 +6,15 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "content"
+    label: "Site Content"
     files:
       - file: "index.html"
-        label: "Home Page"
-        name: "index"
+        label: "Homepage Content"
+        name: "homepage"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Hero Title", name: "hero_title", widget: "string", default: "Micca Rambiki" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string", default: "Student | Educator | Researcher" }
+          - { label: "About Me Text", name: "about_text", widget: "text" }
+          - { label: "Email Address", name: "email", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
