@@ -137,13 +137,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Direct Admin Path -->
     <footer>
         <p>
             © 2026 Micca Rambiki | Domasi College of Education
         </p>
         <p>
-            <a href="/admin/" style="color: #777; font-size: 0.85rem; text-decoration: none;">Admin Login</a>
+            <a href="/admin/index.html" style="color: #777; font-size: 0.85rem; text-decoration: none;">Admin Login</a>
         </p>
     </footer>
 
@@ -156,7 +156,7 @@
         window.netlifyIdentity.on("init", user => {
           if (!user) {
             window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
+              document.location.href = "/admin/index.html";
             });
           }
         });
